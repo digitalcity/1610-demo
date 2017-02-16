@@ -1,23 +1,24 @@
 {
   "name": "1610-demo",
   "version": "1.0.0",
-  "description": "1610班课程代码",
+  "description": "webpack demo",
   "main": "index.js",
-  "dependencies": {
-    "jquery": "^3.1.1"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "git add . && git commit -m'aaa' && git push" 
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/newming/1610-demo.git"
   },
-  "author": "",
+  "keywords": [ "react" ],
+  "author": "newming",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/newming/1610-demo/issues"
   },
-  "homepage": "https://github.com/newming/1610-demo#readme"
+  "homepage": "https://github.com/newming/1610-demo#readme",
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
 }

@@ -1,4 +1,4 @@
-var $ = require('jquery');
+var a = require('./demo');
 
-console.log($);
-afdasfdaf
+
+console.log(a.aa);
