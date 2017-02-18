@@ -19,20 +19,20 @@
 // var p = new Hello();
 
 // class Point {
-//   constructor() {
+//   constructor(x,y) {
 //     console.log('我是自动执行的');
-//     this.x = '我是x';
-//     this.y = '我是y';
+//     this.x = x;
+//     this.y = y;
 //   }
 //   toString(c,d) {
 //     console.log(c,d);
-//     return 'point tostring'
+//     return this.x
 //   }
 // }
 //
 // class Hello extends Point {
-//   constructor(c){
-//     super();
+//   constructor(x,y,c){
+//     super(x,y);
 //     this.c = c;
 //   }
 //   say() {
@@ -40,23 +40,22 @@
 //   }
 // }
 //
-// var p = new Hello(5);
+// var p = new Hello(5,6,7);
 //
-// // console.log(p.toString(5,6));
-// console.log(p.say());
+// console.log(p.toString());
+// console.log(p.x,p.y,p.c);
 
+// import {a,Father,aa} from './demo'; // 引入命名导出变量
+// import demo from './demo'; // 引入默认导出变量
 //
-import {a,Father,aa} from './demo';
-
-console.log(a);
-console.log(aa(6));
-
-class Son extends Father {
-  render(){
-    return(`
-      <li>14354654</li>
-    `)
-  }
-}
-
-document.getElementById('app').innerHTML = new Son()._render();
+// console.log(demo);
+//
+// class Son extends Father {
+//   render(){
+//     return(`
+//       <li>14354654</li>
+//     `)
+//   }
+// }
+//
+// document.getElementById('app').innerHTML = new Son()._render();

@@ -19,3 +19,8 @@ class Father {
 }
 
 export {a,aa,Father}; // 命名导出
+// export default aa; // 默认导出
+
+
+
+export default a;
