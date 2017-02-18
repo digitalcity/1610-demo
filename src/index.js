@@ -47,6 +47,7 @@
 
 //
 import {a,Father,aa} from './demo';
+
 console.log(a);
 console.log(aa(6));
 
