@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "git add . && git commit -m'aaa' && git push" 
+    "build": "./node_modules/.bin/webpack -w"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/newming/1610-demo.git"
   },
-  "keywords": [ "react" ],
+  "keywords": [
+    "react"
+  ],
   "author": "newming",
   "license": "ISC",
   "bugs": {
@@ -19,6 +21,9 @@
   },
   "homepage": "https://github.com/newming/1610-demo#readme",
   "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.1.8",
     "webpack": "^2.2.1"
   }
 }
