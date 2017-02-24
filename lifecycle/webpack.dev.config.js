@@ -1,11 +1,14 @@
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: 'build',
+    path: '/build/',
     filename: 'bundle.js',
-    publicPath: 'build/'
+    publicPath: '/build/'
   },
   devtool: 'eval',
+  devServer: {
+    port: 3000
+  },
   resolve: {
     extensions: [".js", ".css", ".jpg"]
   },

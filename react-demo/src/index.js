@@ -1,23 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function Hello() {
-  return(
-    <div>
-      <h1>hello</h1>
-      <h2>hello</h2>
-      <div>
-        <h1>hello</h1>
-        <h1>hello</h1>
-      </div>
-    </div>
-  )
-}
-
-let a = <h1>hello</h1>;
+import App from './App';
+import './main.css';
 
 ReactDOM.render(
-  <Hello />,document.getElementById('app')
+  <App />
+  ,document.getElementById('app')
 )
 
 
@@ -34,15 +23,5 @@ ReactDOM.render(
 // 1.var Hello = React.createClass({}) es5写法，不用
 // 2.function Hello(){
       // return(<h1>aaa</h1>)
-    // }  使用时 <Hello />
-
-//
-// if (0) {
-//   console.log(0);
-// }else {
-//   console.log(1);
-// }
-// let num = 8;
-// console.log( 0 ? '男' :
-//               num===1 ? '1' :
-//               2 ? 'aaa' : 'eee' );
+    // }  使用时 <Hello /> //dom结构的组合常用
+// 3.class

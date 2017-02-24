@@ -1,0 +1,26 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
+}
+body{
+  position: relative;
+  background-image: url(http://www.ruanyifeng.com/images_pub/pub_45.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.container{
+  position: absolute;
+  width: 40%;
+  /*height: 20px;*/
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-left: -20%;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  transition: all 1s ease;
+}
