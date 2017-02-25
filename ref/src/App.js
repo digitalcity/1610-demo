@@ -3,16 +3,28 @@ import React from 'react';
 import Test from './Test';
 
 class App extends React.Component{
-  componentDidMount(){
-    console.log(this.refs.aaa.getValue());
+  constructor(){
+    super();
+    this.state={
+      divH: 50
+    }
+  }
+  handleWheel(e){
+    console.log(e.deltaY);
+    if (this.state.divH<50) {
+      this.setState({divH: 100})
+    }else {
+      this.setState({divH: this.state.divH + e.deltaY})
+    }
+  }
+  handleMenu(e){
+    e.preventDefault();
+    console.log('你点击了右键');
   }
   render(){
     return(
       <div>
-        <div ref='test' id='test'>aaa</div>
-        <button id='btn1' ref='btn1' onClick={() => this.refs.aaa.handleClick()}>我是1</button>
-        <button id='btn2'>我是2</button>
-        <Test ref='aaa' />
+        <div style={{height:`${this.state.divH}px`,background:'#666'}} onWheel={this.handleWheel.bind(this)} onContextMenu={this.handleMenu.bind(this)}></div>
       </div>
     )
   }
