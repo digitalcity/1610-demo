@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Checkbox from './Checkbox';
+
 class Form extends React.Component{
   constructor(){
     super();
@@ -47,7 +49,7 @@ class Form extends React.Component{
           <input type="radio" name="test" value="famale" checked={this.state.radio==='famale' ? true : false }
           onChange={ (e) => this.setState({radio: e.target.value}) }/>女
 
-          <br/>
+          <Checkbox/>
           <button>提交</button>
         </form>
       </div>
