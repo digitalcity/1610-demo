@@ -1,24 +1,21 @@
 import React from 'react';
 
-export default class Test extends React.Component{
-  constructor(){
-    super();
-    this.state={show:true}
+class Test extends React.Component{
+  getValue(){
+    return this.refs.input.value
   }
-  componentWillReceiveProps(nextProps){
-    console.log('will receive props====',nextProps);
-  }
-  componentWillUpdate(){
-    console.log('child ==== will update');
-  }
-  componentWillUnmount(){
-    console.log('我要被销毁了');
+  handleClick(){
+    alert('aaaa')
   }
   render(){
     return(
       <div>
-        我是test组件:{this.props.childNum}
+        我是测试组件
+        <input type='text' defaultValue='11111aaaa' ref='input'/>
+        {/* <button onClick={this.handleClick.bind(this)}>aa</button> */}
       </div>
     )
   }
 }
+
+export default Test;
