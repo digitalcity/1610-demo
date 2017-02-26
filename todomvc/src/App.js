@@ -13,6 +13,10 @@ class App extends React.Component{
   handleInput(e){
     this.setState({inputValue: e.target.value})
   }
+  handleSubmit(e){
+    e.preventDefault();
+    this.setState({data: [...this.state.data,this.state.inputValue] })
+  }
   render(){
     let styles={
       root: {
@@ -24,7 +28,7 @@ class App extends React.Component{
     return(
       <div style={styles.root}>
         <h1>TODO</h1>
-        <form>
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <input type='text' value={this.state.inputValue} onChange={this.handleInput.bind(this)}/>
           <button>ADD</button>
         </form>
