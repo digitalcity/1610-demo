@@ -5,9 +5,9 @@ class TodoList extends React.Component{
     // console.log(this.props.data);
     let list = this.props.data.map( item =>
       <li key={Math.random()}>
-        <input type='checkbox' />
-        {item}
-        <span className="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+        <input type='checkbox' className='pull-left'/>
+        {item.text}
+        <span className="glyphicon glyphicon-remove-circle pull-right" aria-hidden="true"></span>
       </li>
     )
     return(

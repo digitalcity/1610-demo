@@ -7,7 +7,11 @@ class App extends React.Component{
     super();
     this.state={
       inputValue: '',
-      data: ['aaa','bbb','ccc']
+      data: [
+        {text:'aaaa', completed: false},
+        {text:'bbbb', completed: false},
+        {text:'bbbbbbb', completed: false}
+      ]
     }
   }
   handleInput(e){
@@ -19,24 +23,30 @@ class App extends React.Component{
     if (newItem.length===0) {
       alert('输入内容不能为空')
     }else {
-      this.setState({ data: [...this.state.data,newItem] })
+      let newTodo = {
+        text: newItem,
+        completed: false
+      }
+      this.setState({ data: [...this.state.data,newTodo] })
     }
     this.setState({inputValue: ''})
   }
   render(){
     let styles={
       root: {
-        maxWidth: '680px',
-        margin: '0 auto',
-        textAlign: 'center'
+        maxWidth: '500px',
+        margin: '0 auto'
       }
     }
     return(
       <div style={styles.root}>
-        <h1>TODO</h1>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <input type='text' value={this.state.inputValue} onChange={this.handleInput.bind(this)}/>
-          <button>ADD</button>
+        <h1 style={{textAlign: 'center'}}>TODO</h1>
+
+        <form onSubmit={this.handleSubmit.bind(this)} className='form-inline'>
+          <div className="form-group">
+            <input type='text' value={this.state.inputValue} onChange={this.handleInput.bind(this)} className='form-control'/>
+            <button className="btn btn-default">ADD</button>
+          </div>
         </form>
 
         <TodoList data={this.state.data}/>
