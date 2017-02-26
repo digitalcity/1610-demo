@@ -15,7 +15,13 @@ class App extends React.Component{
   }
   handleSubmit(e){
     e.preventDefault();
-    this.setState({data: [...this.state.data,this.state.inputValue] })
+    let newItem = this.state.inputValue.trim();
+    if (newItem.length===0) {
+      alert('输入内容不能为空')
+    }else {
+      this.setState({ data: [...this.state.data,newItem] })
+    }
+    this.setState({inputValue: ''})
   }
   render(){
     let styles={
