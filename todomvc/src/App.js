@@ -8,11 +8,7 @@ class App extends React.Component{
     super();
     this.state={
       inputValue: '',
-      data: [
-        {text:'aaaa', completed: false, id: 1},
-        {text:'bbbb', completed: true, id: 2},
-        {text:'bbbbbbb', completed: false, id: 3}
-      ],
+      data: [],
       visible: 'ALL'
     }
   }
@@ -52,10 +48,16 @@ class App extends React.Component{
     }
     this.setState({inputValue: ''})
   }
+  componentWillMount(){
+    if (localStorage.todos) {
+      this.setState({data: JSON.parse(window.localStorage.getItem('todos') || '[]') })
+    }
+  }
   render(){
+    localStorage.setItem('todos',JSON.stringify(this.state.data))
     let styles={
       root: {
-        maxWidth: '500px',
+        maxWidth: '400px',
         margin: '0 auto'
       }
     }
@@ -73,7 +75,6 @@ class App extends React.Component{
     return(
       <div style={styles.root}>
         <h1 style={{textAlign: 'center'}}>TODO</h1>
-
         <form onSubmit={this.handleSubmit.bind(this)} className='form-inline'>
           <div className="form-group">
             <input type='text' value={this.state.inputValue} onChange={this.handleInput.bind(this)} className='form-control'/>
