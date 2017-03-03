@@ -7,7 +7,8 @@ module.exports = {
   },
   devtool: 'eval',
   devServer: {
-    port: 3000
+    port: 3000,
+    historyApiFallback: true
   },
   resolve: {
     extensions: [".js", ".css", ".jpg"]

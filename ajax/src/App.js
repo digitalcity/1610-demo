@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router';
 import axios from 'axios';
 
 class App extends React.Component{
@@ -12,19 +12,15 @@ class App extends React.Component{
   }
   componentDidMount(){
     // 1.axios
-    // axios.get('https://cnodejs.org/api/v1/topics')
-    //   .then( res => this.setState({data: res.data.data}) )
-    // 2.fetch
-    fetch('https://cnodejs.org/api/v1/topics')
-      .then( res => res.json() )
-      .then( json => this.setState({data: json.data, show: true}) )
+    axios.get('https://cnodejs.org/api/v1/topics')
+      .then( res => this.setState({data: res.data.data,show: true}) )
   }
   render(){
     // console.log(this.state.data);
     let blogs = this.state.data.map( item =>
       <div key={item.id}>
         <img src={item.author.avatar_url} />
-        <a href={`https://cnodejs.org/topic/${item.id}`} target='_blank'>{item.title}</a>
+        <Link to={`blog/${item.id}`} >{item.title}</Link>
         <span>浏览量：{item.visit_count}</span>
       </div>
     )
