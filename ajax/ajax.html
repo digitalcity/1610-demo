@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="name">数据没过来呢</div>
+  <div id="img">
+
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script>
+    // get
+    // axios.get('https://api.github.com/users/newming')
+    //   .then( res => console.log(res.data) )
+    //   .catch( error => console.log(error) );
+    // post
+    axios.post('https://cnodejs.org/api/v1/accesstoken',{
+      accesstoken: '3f77acb1-d753-4393-b784-44913190e6a8'
+    }).then( res => console.log(res.data)).catch( err => console.log(err))
+
+    // fetch
+    // get
+    // fetch('https://api.github.com/users/newming')
+    //   .then( res => res.json() )
+    //   .then( json => console.log(json) )
+
+    // post
+    // fetch('https://cnodejs.org/api/v1/accesstoken', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({
+    //     accesstoken: '3f77acb1-d753-4393-b784-44913190e6a8'
+    //   })
+    // })
+    //   .then( res => res.json() )
+    //   .then( json => console.log(json) )
+
+    // new Promise(function(resolve, reject){
+    //   console.log('Run!');
+    //   setTimeout(function(){
+    //     reject()
+    //   }, 3000);
+    // }).then(function(){
+    //   console.log('thing.then()...');
+    // }).catch(function(){
+    //   console.log('thing.catch()...');
+    // });
+  </script>
+
+  <!-- <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script> -->
+  <!-- <script>
+    $.ajax({
+      dataType:'jsonp',
+      jsonp:'callback',
+      url: 'https://api.douban.com/v2/book/1220562'
+    }).done(function (data, status) {
+      console.log(data,status);
+    }).fail(function (xhr, error) {
+      alert(error)
+    })
+
+    // 跨域请求http 协议的规定就是不同源之间不能进行资源共享。
+    // http://api.github.com:80 这一段如果有不同的都叫跨域
+    // 一般后台设置Access-Control-Allow-Origin:*即可以解决
+
+    // dataType: 'jsonp'
+    // jsonp: 'callback'
+    // jsonp 请求只能get
+  </script> -->
+
+  <!-- 发送 ajax 请求的几种方式
+
+  原生 XMLHttpRequest()
+  jquery  $.ajax({type:'POST',data:string,success:function(){}})
+  fetch  fetch('url').then( res => res.json() ).then( json => do() ).catch( err => alert(err) )
+  axios -->
+</body>
+</html>
