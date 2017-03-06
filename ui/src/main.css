@@ -1,0 +1,14 @@
+.test-enter {
+  opacity: 0.01;
+}
+.test-enter.test-enter-active {
+  opacity: 1;
+  transform: all 1000ms ease-in;
+}
+.test-leave {
+  opacity: 1;
+}
+.test-leave.test-leave-active {
+  opacity: 0.01;
+  transform: all 3000ms ease-in;
+}
